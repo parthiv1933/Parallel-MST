@@ -29,5 +29,5 @@ This process repeats until only one component remains, which represents the comp
 To compile the CUDA source code, use the following command. This will create an executable file named `parallelMST.out`.
 
 ```bash
-nvcc -std=c++17 parallelMST.cu -o parallelMST.out
+nvcc -std=c++17 parallelMST.cu -o parallelMST.out  -arch=sm_75
 
