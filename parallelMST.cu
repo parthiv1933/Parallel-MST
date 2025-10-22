@@ -147,6 +147,11 @@ __global__ void intializeMinEdgeAndfinalParentComponent(int *minWeight,int *minE
 
 int main() {
 
+  // ifstream file("/content/drive/MyDrive/assignment3/test3.txt");
+  // if(!file){
+  //   cout<<"error"<<endl;
+  //   return 1;
+  // }
     // Create a sample graph
     unsigned int V;
     // file >> V;
@@ -263,11 +268,35 @@ int main() {
         //intialize all vertex's minedge weight and id and parent calculation  for next iteration
         
         intializeMinEdgeAndfinalParentComponent<<<Vblock,1024>>>((int *)minWeight, (int *)minEdgeId,parent,V);
-    
+        
+        
+      //   int * minw = new int[V];
+      //  cudaMemcpy(minw,(void *)minWeight,sizeof(int)*V,cudaMemcpyDeviceToHost);
+      //  mergeAndAddEdge<<<Vblock,1024>>>((int *)minEdgeId, (int *)parent, V, ds, dd, dw, dTW, dNOC);
+      //  for(int j=0;j<V;j++){
+      //   cout<<j<<" "<<minw[j]<<endl;
+      //  }
+      
+        
+        
     }
      
 
-       
+       /* for(int x=0;x<20;x++){
+          intializeMinEdge <<<Vblock,1024>>> ((int *)minWeight, (int *)minEdgeId, V);
+        //find minimum edge weight for each vertex
+        findMinEdgeWeight<<<Eblock,1024>>> (ds,dd,dw,minWeight,parent,E);
+        //find minimum edge id for each vertex
+        findMinEdgeId<<<Eblock,1024>>> (ds,dd,dw,minWeight,minEdgeId,parent,E);
+        mergeAndAddEdge<<<Vblock,1024>>>((int *)minEdgeId, (int *)parent, V, ds, dd, dw, dTW, dNOC);
+
+       int * minw = new int[V];
+       cudaMemcpy(minw,(void *)minWeight,sizeof(int)*V,cudaMemcpyDeviceToHost);
+       mergeAndAddEdge<<<Vblock,1024>>>((int *)minEdgeId, (int *)parent, V, ds, dd, dw, dTW, dNOC);
+       for(int j=0;j<V;j++){
+        cout<<j<<" "<<minw[j]<<endl;
+       }
+        }*/
 
     
 
