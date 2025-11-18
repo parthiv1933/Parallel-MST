@@ -1,11 +1,10 @@
-# Parallel Minimum Spanning Tree (MST) using Borůvka's Algorithm 🌳
+# Parallel Minimum Spanning Tree (MST) using Borůvka's Algorithm 
 
 This project provides a massively parallel implementation of a Minimum Spanning Tree (MST) graph algorithm using NVIDIA CUDA. The implementation is based on **Borůvka's algorithm**, which is highly effective for parallel architectures.
 
 ---
 
-## Algorithm Explained 🧠
-
+## Algorithm Explained 
 The core logic utilizes **Borůvka's algorithm**. This algorithm works iteratively, starting with each vertex as its own component. In each iteration (or "superstep"):
 
 1.  Every component finds its minimum-weight edge connecting it to a *different* component.
@@ -16,7 +15,7 @@ This process repeats until only one component remains, which represents the comp
 
 ---
 
-## Requirements ⚙️
+## Requirements 
 
 * **NVIDIA GPU**: A CUDA-enabled NVIDIA GPU is required to run the parallel implementation.
 * **CUDA Toolkit**: The `nvcc` compiler must be installed and available in your system's PATH.
@@ -24,7 +23,7 @@ This process repeats until only one component remains, which represents the comp
 
 ---
 
-## Compilation 🔨
+## Compilation 
 
 To compile the CUDA source code, use the following command. This will create an executable file named `parallelMST.out`.
 
